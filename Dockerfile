@@ -1,6 +1,6 @@
 FROM maven:3.6.1
 
-RUN mdkir -p /app
+RUN mkdir -p /app
 
 COPY . /app
 
