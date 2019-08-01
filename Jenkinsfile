@@ -6,12 +6,12 @@ node {
 	}
 
 	stage('Build image') {
-		app = docker.build("${application}:${BUILD_NUMBER}")
+		app = docker.build("${dockerhubaccountid}/${application}:${BUILD_NUMBER}")
 	}
 
 	stage('Push image') {
-		app.push("${dockerhubaccountid}/${application}:${BUILD_NUMBER}")
-		app.push("${dockerhubaccountid}/${application}:latest")
+		app.push()
+		app.push("latest")
 	}
 
 	stage('Deploy') {
