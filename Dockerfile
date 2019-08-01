@@ -1,4 +1,4 @@
-FROM maven:3.6.1
+FROM maven:3.5.2-jdk-8
 
 RUN mkdir -p /app
 
