@@ -20,7 +20,7 @@ node {
 	
 	stage('Remove old images') {
 		// remove docker pld images
-		sh("${dockerhubaccountid}/${application}:latest ")
-		sh("${application}:${BUILD_NUMBER}")
+		sh("docker rmi ${dockerhubaccountid}/${application}:latest -f")
+		sh("docker rmi ${application}:${BUILD_NUMBER} -f")
    }
 }
